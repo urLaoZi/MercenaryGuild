@@ -1,0 +1,72 @@
+﻿/* Основные стили */
+:root {
+    --neon-pink: #ff2a6d;
+    --neon-blue: #05d9e8;
+    --neon-purple: #d300c5;
+    --cyber-yellow: #f9f002;
+    --matrix-green: #0aff0a;
+    --dark-bg: #0d0221;
+    --darker-bg: #02010a;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rajdhani', sans-serif;
+    background: url('../images/bg/main-bg.jpg') center/cover fixed, linear-gradient(45deg, #0f0f2b 0%, #1a0a33 100%);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Хедер */
+.cyber-header {
+    background: rgba(13, 2, 33, 0.8);
+    border-bottom: 3px solid var(--neon-blue);
+    box-shadow: 0 0 30px var(--neon-purple);
+    padding: 1.5rem;
+    position: relative;
+    z-index: 100;
+}
+
+/* Карточка наёмника */
+.merc-card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--neon-blue);
+    border-radius: 0;
+    padding: 1.5rem;
+    margin: 1rem;
+    width: 280px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+    .merc-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 25px var(--neon-purple);
+        border-color: var(--neon-pink);
+    }
+
+/* Анимации */
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+    }
+
+    20%, 22%, 24%, 55% {
+        opacity: 0.3;
+    }
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    .cyber-container {
+        flex-direction: column;
+    }
+
+    .cyber-menu {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+}

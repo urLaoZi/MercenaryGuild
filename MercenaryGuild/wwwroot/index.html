@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEO-GUILD | Cyberpunk Mercenaries</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Аудио -->
+    <audio id="bgMusic" loop>
+        <source src="audio/cyberpunk_ambient.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Матричный эффект -->
+    <canvas id="matrixRain"></canvas>
+
+    <!-- Главный контейнер -->
+    <div class="cyber-container">
+        <!-- Хедер -->
+        <header class="cyber-header">
+            <div class="header-content">
+                <h1 class="neon-text" data-text="NEO-GUILD">NEO-GUILD</h1>
+                <p class="subtitle">Киберконтракты для цифровых наёмников</p>
+            </div>
+            <button id="musicToggle" class="cyber-button small">
+                <i class="fas fa-music"></i>
+            </button>
+        </header>
+
+        <!-- Основной контент -->
+        <main class="cyber-main">
+            <!-- Боковое меню -->
+            <nav class="cyber-menu">
+                <button class="cyber-tab active" data-tab="mercenaries">
+                    <i class="fas fa-robot"></i>
+                    <span>Агенты</span>
+                    <div class="tab-glow"></div>
+                </button>
+                <button class="cyber-tab" data-tab="quests">
+                    <i class="fas fa-biohazard"></i>
+                    <span>Контракты</span>
+                    <div class="tab-glow"></div>
+                </button>
+                <button class="cyber-tab" data-tab="register">
+                    <i class="fas fa-id-card-alt"></i>
+                    <span>Регистрация</span>
+                    <div class="tab-glow"></div>
+                </button>
+                <button class="cyber-tab" data-tab="post-quest">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Новый контракт</span>
+                    <div class="tab-glow"></div>
+                </button>
+            </nav>
+
+            <!-- Контент вкладок -->
+            <div class="tab-content">
+                <!-- Вкладка наёмников -->
+                <section id="mercenaries" class="cyber-tab-panel active">
+                    <h2><i class="fas fa-robot"></i> Зарегистрированные Агенты</h2>
+                    <div class="merc-grid" id="mercenaries-container">
+                        <!-- Карточки будут добавляться через JS -->
+                    </div>
+                </section>
+
+                <!-- Вкладка заданий -->
+                <section id="quests" class="cyber-tab-panel">
+                    <h2><i class="fas fa-biohazard"></i> Доступные Контракты</h2>
+                    <div class="quest-filters">
+                        <label class="cyber-checkbox">
+                            <input type="checkbox" id="show-available" checked>
+                            <span>Доступные</span>
+                        </label>
+                        <label class="cyber-checkbox">
+                            <input type="checkbox" id="show-taken">
+                            <span>Выполняемые</span>
+                        </label>
+                    </div>
+                    <div class="quest-grid" id="quests-container">
+                        <!-- Карточки заданий через JS -->
+                    </div>
+                </section>
+
+                <!-- Остальные вкладки -->
+                <section id="register" class="cyber-tab-panel">
+                    <!-- Форма регистрации -->
+                </section>
+
+                <section id="post-quest" class="cyber-tab-panel">
+                    <!-- Форма создания задания -->
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="js/matrix-effect.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
